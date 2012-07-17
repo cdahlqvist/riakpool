@@ -1,4 +1,5 @@
 %% @author David Weldon
+%% @author Christian Dahlqvist - WhiteNode Software Ltd
 %% @hidden
 
 -module(riakpool_connection_sup).

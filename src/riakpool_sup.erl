@@ -1,4 +1,5 @@
 %% @author David Weldon
+%% @author Christian Dahlqvist - WhiteNode Software Ltd
 %% @hidden
 
 -module(riakpool_sup).
@@ -16,4 +17,4 @@ init([]) ->
     Pool =
         {riakpool, {riakpool, start_link, []},
          permanent, 2000, worker, [riakpool]},
-    {ok, {{one_for_all, 5, 30}, [ConnectionSup, Pool]}}.
+    {ok, {{one_for_one, 5, 30}, [ConnectionSup, Pool]}}.
